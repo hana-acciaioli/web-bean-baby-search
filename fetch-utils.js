@@ -19,7 +19,7 @@ export async function getBeanieBabies(title, astroSign) {
     return response;
 }
 
-export async function getAstros() {
-    const response = await client.from('beanie_baby_astro_signs').select();
+export async function getAstroSigns() {
+    const response = await client.from('beanie_baby_astro_signs').select('*');
     return response;
 }

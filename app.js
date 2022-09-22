@@ -1,5 +1,5 @@
 /* Imports */
-import { getAstros, getBeanieBabies } from './fetch-utils.js';
+import { getAstroSigns, getBeanieBabies } from './fetch-utils.js';
 import { renderAstroOption, renderBeanieBaby } from './render-babies.js';
 
 /* Get DOM Elements */
@@ -16,7 +16,7 @@ let beanieBabies = [];
 /* Events */
 window.addEventListener('load', async () => {
     findBeanies();
-    const response = await getAstros();
+    const response = await getAstroSigns();
 
     error = response.error;
     astroSigns = response.data;

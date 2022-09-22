@@ -39,25 +39,17 @@ button {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
     padding: 10px;
-    /* text-align: center; */
-
     display: grid;
     align-content: space-between;
-    /* justify-items: center; */
     grid-template-columns: 175px 1fr;
 }
 
-/* img {
-    /* width: 100px; */
-/* height: 100px; */
-/* } */
-*/
-/* .card img {
+.card img {
     width: 100px;
     height: 100px;
     object-fit: contain;
     grid-template-rows: center;
-} */
+}
 
 .card h2 {
     font-size: 1.1em;
@@ -73,6 +65,17 @@ button {
     font-size: 0.8em;
 }
 
-/* .content {
+.content {
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 
-} */
+.content h2,
+.content p {
+    margin: 0;
+}
+
+.content h2 {
+    font-size: 1.1em;
+}

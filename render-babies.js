@@ -18,6 +18,9 @@ export function renderBeanieBaby(beanieBaby) {
     const animal = document.createElement('span');
     animal.textContent = beanieBaby.animal;
 
+    const subtheme = document.createElement('span');
+    subtheme.textContent = beanieBaby.subtheme;
+
     const astroSign = document.createElement('span');
     astroSign.textContent = beanieBaby.astroSign;
     attributes.classList.add('attributes');
@@ -26,7 +29,7 @@ export function renderBeanieBaby(beanieBaby) {
     released.classList.add('released');
     released.textContent = `Released ${beanieBaby.releaseYear}`;
 
-    content.append(h2, attributes, released);
+    content.append(h2, attributes, animal, astroSign, released);
 
     li.append(img, content);
 
