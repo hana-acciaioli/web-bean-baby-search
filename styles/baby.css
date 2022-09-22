@@ -28,28 +28,46 @@ button {
 
 .list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-auto-rows: 225px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: 175px;
     gap: 10px;
 }
 
 .card {
-    background: white;
+    background: rgb(108, 195, 239);
     border: 1px solid lightgrey;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 
     padding: 10px;
-    text-align: center;
+    /* text-align: center; */
 
     display: grid;
     align-content: space-between;
-    justify-items: center;
+    /* justify-items: center; */
+    grid-template-columns: 175px 1fr;
 }
 
+img {
+    width: 100px;
+    height: 100px;
+}
 .card img {
-    width: 72px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    grid-template-rows: center;
 }
 
 .card h2 {
     font-size: 1.1em;
+}
+.attributes {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.released {
+    font-size: 0.8em;
 }
