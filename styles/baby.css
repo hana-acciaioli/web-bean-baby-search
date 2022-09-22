@@ -47,16 +47,17 @@ button {
     grid-template-columns: 175px 1fr;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-}
-.card img {
+/* img {
+    /* width: 100px; */
+/* height: 100px; */
+/* } */
+*/
+/* .card img {
     width: 100px;
     height: 100px;
     object-fit: contain;
     grid-template-rows: center;
-}
+} */
 
 .card h2 {
     font-size: 1.1em;
@@ -71,3 +72,7 @@ img {
 .released {
     font-size: 0.8em;
 }
+
+/* .content {
+
+} */

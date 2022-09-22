@@ -4,15 +4,20 @@ const SUPABASE_KEY =
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export async function getBeanieBabies(name, type) {
+export async function getBeanieBabies(title, astroSign) {
     let query = client.from('beanie_babies').select('*').order('title').limit(100);
     // eslint-disable-next-line no-empty
-    if (name) {
+    if (title) {
     }
 
     // eslint-disable-next-line no-empty
-    if (type) {
+    if (astroSign) {
     }
     const response = await query;
+    return response;
+}
+
+export async function getAstros() {
+    const response = await client.from('beanie_baby_astro_signs').select();
     return response;
 }

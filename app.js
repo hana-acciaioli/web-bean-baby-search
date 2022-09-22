@@ -1,19 +1,27 @@
 /* Imports */
-import { getBeanieBabies } from './fetch-utils.js';
-import { renderBeanieBaby } from './render-babies.js';
+import { getAstros, getBeanieBabies } from './fetch-utils.js';
+import { renderAstroOption, renderBeanieBaby } from './render-babies.js';
 
 /* Get DOM Elements */
 
 const beanieBabyList = document.getElementById('beanie-baby-list');
 const notificationDisplay = document.getElementById('notification-display');
+const astroSignSelect = document.getElementById('astro-sign-select');
 /* State */
 let error = null;
-// let astroSigns = [];
+let astroSigns = [];
 let beanieBabies = [];
 
 /* Events */
 window.addEventListener('load', async () => {
     findBeanies();
+    const response = await getAstros();
+
+    error = response.error;
+    astroSigns = response.data;
+    if (!error) {
+        displayAstroOptions();
+    }
 });
 
 async function findBeanies() {
@@ -45,6 +53,12 @@ function displayNotifications() {
         notificationDisplay.textContent = error.message;
     } else {
         notificationDisplay.classList.remove('error');
+    }
+}
+function displayAstroOptions() {
+    for (const astroSign of astroSigns) {
+        const option = renderAstroOption(astroSign);
+        astroSignSelect.append(option);
     }
 }
 

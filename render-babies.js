@@ -20,6 +20,7 @@ export function renderBeanieBaby(beanieBaby) {
 
     const astroSign = document.createElement('span');
     astroSign.textContent = beanieBaby.astroSign;
+    attributes.classList.add('attributes');
 
     const released = document.createElement('p');
     released.classList.add('released');
@@ -30,4 +31,11 @@ export function renderBeanieBaby(beanieBaby) {
     li.append(img, content);
 
     return li;
+}
+
+export function renderAstroOption(astroSign) {
+    const option = document.createElement('option');
+    option.value = astroSign.name;
+    option.textContent = astroSign.name;
+    return option;
 }
