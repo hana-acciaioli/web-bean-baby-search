@@ -8,10 +8,12 @@ export async function getBeanieBabies(title, astroSign) {
     let query = client.from('beanie_babies').select('*').order('title').limit(100);
     // eslint-disable-next-line no-empty
     if (title) {
+        query = query.ilike('title', `%${title}%`);
     }
 
     // eslint-disable-next-line no-empty
     if (astroSign) {
+        query = query.eq('astroSign', astroSign);
     }
     const response = await query;
     return response;
