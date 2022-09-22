@@ -1,4 +1,5 @@
 /* Imports */
+import { getBeanBabies } from './fetch-utils.js';
 
 /* Get DOM Elements */
 
