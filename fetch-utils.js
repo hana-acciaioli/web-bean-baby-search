@@ -12,8 +12,8 @@ export async function getBeanieBabies(title, astroSign) {
     }
 
     // eslint-disable-next-line no-empty
-    if (astroSign) {
-        query = query.eq('astroSign', astroSign);
+    if (astroSign.name) {
+        query = query.eq('astroSign', astroSign.name);
     }
     const response = await query;
     return response;
