@@ -12,6 +12,7 @@ const searchForm = document.getElementById('search-form');
 let error = null;
 let astroSigns = [];
 let beanieBabies = [];
+let count = 0;
 
 /* Events */
 window.addEventListener('load', async () => {
@@ -30,6 +31,7 @@ async function findBeanies(name, astroSign) {
 
     error = response.error;
     beanieBabies = response.data;
+    count = response.count;
 
     displayNotifications();
     if (!error) {
@@ -40,7 +42,6 @@ async function findBeanies(name, astroSign) {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
-    console.log(formData.get('astroSign'));
     findBeanies(formData.get('name'), formData.get('astroSign'));
 });
 
@@ -61,6 +62,7 @@ function displayNotifications() {
         notificationDisplay.textContent = error.message;
     } else {
         notificationDisplay.classList.remove('error');
+        notificationDisplay.textContent = `showing ${beanieBabies.length} of ${count} matching beanie babies`;
     }
 }
 function displayAstroOptions() {
