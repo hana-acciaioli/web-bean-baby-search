@@ -10,11 +10,13 @@ export async function getBeanieBabies(title, astroSign) {
     if (title) {
         query = query.ilike('title', `%${title}%`);
     }
+    console.log(astroSign);
 
     // eslint-disable-next-line no-empty
-    if (astroSign.name) {
-        query = query.eq('astroSign', astroSign.name);
+    if (astroSign) {
+        query = query.eq('astroSign', astroSign);
     }
+
     const response = await query;
     return response;
 }

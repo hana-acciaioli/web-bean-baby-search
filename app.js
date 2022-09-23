@@ -40,6 +40,7 @@ async function findBeanies(name, astroSign) {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(searchForm);
+    console.log(formData.get('astroSign'));
     findBeanies(formData.get('name'), formData.get('astroSign'));
 });
 
